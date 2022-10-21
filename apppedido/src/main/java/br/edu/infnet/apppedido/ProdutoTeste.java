@@ -2,31 +2,46 @@ package br.edu.infnet.apppedido;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppedido.model.domain.Produto;
+import br.edu.infnet.apppedido.model.domain.Bebida;
+import br.edu.infnet.apppedido.model.domain.Comida;
+import br.edu.infnet.apppedido.model.domain.Sobremesa;
 
+@Order(3)
 @Component
 public class ProdutoTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		Produto p1 = new Produto();		
-		p1.codigo = 123; 
-		p1.nome = "Bebida 123";
-		p1.valor = 10;
-		System.out.println("Produto - " + p1);
-		
-		Produto p2 = new Produto();		
-		p2.codigo = 234; 
-		p2.nome = "Comida 234";
-		p2.valor = 15;
-		System.out.println("Produto - " + p2);
-		
-		Produto p3 = new Produto();		
-		p3.codigo = 345; 
-		p3.nome = "Sobremesa 345";
-		p3.valor = 20;
-		System.out.println("Produto - " + p3);
+		System.out.println("## Cadastramento de Produtos ##");
+
+		Bebida b1 = new Bebida();
+		b1.setCodigo(123);
+		b1.setNome("Bebida 123");
+		b1.setValor(10);
+		b1.setGelada(false);
+		b1.setMarca("cooffffe");
+		b1.setTamanho(100);
+		System.out.println("> " + b1);
+
+		Comida c1 = new Comida();		
+		c1.setCodigo(123); 
+		c1.setNome("Comida 123");
+		c1.setValor(10);
+		c1.setIngredientes("frango e fritas");
+		c1.setPeso(100);
+		c1.setVegano(false);
+		System.out.println("> " + c1);
+
+		Sobremesa s1 = new Sobremesa();		
+		s1.setCodigo(123); 
+		s1.setNome("Sobremesa 123");
+		s1.setValor(10);
+		s1.setDoce(true);
+		s1.setInformacao("Doce demais");
+		s1.setQuantidade(1);
+		System.out.println("> " + s1);
 	}
 }

@@ -1,13 +1,36 @@
 package br.edu.infnet.apppedido.model.domain;
 
 public class Comida extends Produto {
-	public float peso;
-	public boolean vegano;
-	public String ingredientes;
+	private float peso;
+	private boolean vegano;
+	private String ingredientes;
 	
 	@Override
 	public String toString() {
-		return peso + ";" + vegano + ";" + ingredientes;
+		return super.toString() + ";" + peso + ";" + vegano + ";" + ingredientes;
 	}
 
+	public float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+	public boolean isVegano() {
+		return vegano;
+	}
+
+	public void setVegano(boolean vegano) {
+		this.vegano = vegano;
+	}
+
+	public String getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(String ingredientes) {
+		this.ingredientes = ingredientes;
+	}
 }

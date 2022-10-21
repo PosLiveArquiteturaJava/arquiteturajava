@@ -4,31 +4,35 @@ import java.time.LocalDateTime;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.apppedido.model.domain.Pedido;
 
+@Order(1)
 @Component
 public class PedidoTeste implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("## Cadastramento de Pedidos ##");
+
 		Pedido p1 = new Pedido();		
-		p1.data = LocalDateTime.now();
-		p1.descricao = "Primeiro pedido";
-		p1.web = true;
-		System.out.println("Pedido - " + p1);
+		p1.setData(LocalDateTime.now());
+		p1.setDescricao("Primeiro pedido");
+		p1.setWeb(true);
+		System.out.println("> " + p1);
 		
 		Pedido p2 = new Pedido();
-		p2.data = LocalDateTime.now();
-		p2.descricao = "Segundo pedido";
-		p2.web = false;
-		System.out.println("Pedido - " + p2);
+		p2.setData(LocalDateTime.now());
+		p2.setDescricao("Segundo pedido");
+		p2.setWeb(false);
+		System.out.println("> " + p2);
 		
 		Pedido p3 = new Pedido();
-		p3.data = LocalDateTime.now();
-		p3.descricao = "Terceiro pedido";
-		p3.web = false;
-		System.out.println("Pedido - " + p3);
+		p3.setData(LocalDateTime.now());
+		p3.setDescricao("Terceiro pedido");
+		p3.setWeb(true);
+		System.out.println("> " + p3);
 	}
 }
