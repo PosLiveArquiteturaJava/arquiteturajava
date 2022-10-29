@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.apppedido.controller.PedidoController;
 import br.edu.infnet.apppedido.model.domain.Bebida;
 import br.edu.infnet.apppedido.model.domain.Comida;
 import br.edu.infnet.apppedido.model.domain.Pedido;
@@ -65,14 +66,14 @@ public class PedidoTeste implements ApplicationRunner {
 		p1.setDescricao("Primeiro pedido");
 		p1.setWeb(true);
 		p1.setProdutos(produtosPrimeiroPedido);
-		System.out.println("> " + p1);
+		PedidoController.incluir(p1);
 		
 		Pedido p2 = new Pedido();
 		p2.setDescricao("Segundo pedido");
 		p2.setWeb(false);
 		p2.setSolicitante(s1);
 		p2.setProdutos(produtosDemaisPedidos);
-		System.out.println("> " + p2);
+		PedidoController.incluir(p2);
 		
 		Solicitante s2 = new Solicitante();		
 		s2.setCpf("23423423423");
@@ -83,6 +84,6 @@ public class PedidoTeste implements ApplicationRunner {
 		p3.setDescricao("Terceiro pedido");
 		p3.setSolicitante(s2);
 		p3.setProdutos(produtosDemaisPedidos);
-		System.out.println("> " + p3);
+		PedidoController.incluir(p3);
 	}
 }

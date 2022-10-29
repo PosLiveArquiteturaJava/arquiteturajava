@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.apppedido.controller.SobremesaController;
 import br.edu.infnet.apppedido.model.domain.Sobremesa;
 
 @Order(6)
@@ -22,7 +23,7 @@ public class SobremesaTeste implements ApplicationRunner {
 		s1.setDoce(true);
 		s1.setInformacao("Doce demais");
 		s1.setQuantidade(1);
-		System.out.println("> " + s1);
+		SobremesaController.incluir(s1);
 		
 		Sobremesa s2 = new Sobremesa();		
 		s2.setCodigo(234); 
@@ -31,7 +32,7 @@ public class SobremesaTeste implements ApplicationRunner {
 		s2.setDoce(false);
 		s2.setInformacao("Nem é doce");
 		s2.setQuantidade(2);
-		System.out.println("> " + s2);
+		SobremesaController.incluir(s2);
 		
 		Sobremesa s3 = new Sobremesa();		
 		s3.setCodigo(345); 
@@ -40,6 +41,6 @@ public class SobremesaTeste implements ApplicationRunner {
 		s3.setDoce(true);
 		s3.setInformacao("Muito doce");
 		s3.setQuantidade(4);
-		System.out.println("> " + s3);
+		SobremesaController.incluir(s3);
 	}
 }

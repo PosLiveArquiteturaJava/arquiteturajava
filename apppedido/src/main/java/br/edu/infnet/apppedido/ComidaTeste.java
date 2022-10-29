@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.apppedido.controller.ComidaController;
 import br.edu.infnet.apppedido.model.domain.Comida;
 
 @Order(5)
@@ -22,7 +23,7 @@ public class ComidaTeste implements ApplicationRunner {
 		c1.setIngredientes("frango e fritas");
 		c1.setPeso(100);
 		c1.setVegano(false);
-		System.out.println("> " + c1);
+		ComidaController.incluir(c1);
 		
 		Comida c2 = new Comida();
 		c2.setCodigo(234); 
@@ -31,7 +32,7 @@ public class ComidaTeste implements ApplicationRunner {
 		c2.setIngredientes("batata e cenoura");
 		c2.setPeso(200);
 		c2.setVegano(true);
-		System.out.println("> " + c2);
+		ComidaController.incluir(c2);
 		
 		Comida c3 = new Comida();
 		c3.setCodigo(345); 
@@ -40,6 +41,6 @@ public class ComidaTeste implements ApplicationRunner {
 		c3.setIngredientes("hamburguer e bacon");
 		c3.setPeso(400);
 		c3.setVegano(false);
-		System.out.println("> " + c3);
+		ComidaController.incluir(c3);
 	}
 }
