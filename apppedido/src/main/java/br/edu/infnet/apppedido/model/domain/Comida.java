@@ -1,5 +1,10 @@
 package br.edu.infnet.apppedido.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tcomida")
 public class Comida extends Produto {
 	private float peso;
 	private boolean vegano;

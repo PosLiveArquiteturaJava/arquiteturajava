@@ -1,16 +1,20 @@
 package br.edu.infnet.apppedido;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.apppedido.controller.BebidaController;
 import br.edu.infnet.apppedido.model.domain.Bebida;
+import br.edu.infnet.apppedido.model.service.BebidaService;
 
 @Order(4)
 @Component
 public class BebidaTeste implements ApplicationRunner {
+	
+	@Autowired
+	private BebidaService bebidaService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -23,7 +27,7 @@ public class BebidaTeste implements ApplicationRunner {
 		b1.setGelada(false);
 		b1.setMarca("cooffffe");
 		b1.setTamanho(100);
-		BebidaController.incluir(b1);
+		bebidaService.incluir(b1);
 		
 		Bebida b2 = new Bebida();
 		b2.setCodigo(234);
@@ -32,7 +36,7 @@ public class BebidaTeste implements ApplicationRunner {
 		b2.setGelada(true);
 		b2.setMarca("choooope");
 		b2.setTamanho(500);
-		BebidaController.incluir(b2);
+		bebidaService.incluir(b2);
 		
 		Bebida b3 = new Bebida();
 		b3.setCodigo(345);
@@ -41,6 +45,6 @@ public class BebidaTeste implements ApplicationRunner {
 		b3.setGelada(true);
 		b3.setMarca("suuuuco");
 		b3.setTamanho(1000);
-		BebidaController.incluir(b3);
+		bebidaService.incluir(b3);
 	}
 }

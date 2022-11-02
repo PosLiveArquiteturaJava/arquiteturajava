@@ -3,12 +3,16 @@ package br.edu.infnet.apppedido.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Transient;
+
 public class Pedido {
 	private Integer id;
 	private String descricao;
 	private LocalDateTime data;
 	private boolean web;
+	@Transient
 	private Solicitante solicitante;
+	@Transient
 	private List<Produto> produtos;
 	
 	public Pedido() {
