@@ -16,7 +16,7 @@ import br.edu.infnet.apppedido.model.domain.Produto;
 import br.edu.infnet.apppedido.model.domain.Sobremesa;
 import br.edu.infnet.apppedido.model.domain.Solicitante;
 
-@Order(1)
+@Order(2)
 @Component
 public class PedidoTeste implements ApplicationRunner {
 

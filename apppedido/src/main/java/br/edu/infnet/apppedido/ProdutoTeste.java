@@ -10,7 +10,7 @@ import br.edu.infnet.apppedido.model.domain.Bebida;
 import br.edu.infnet.apppedido.model.domain.Comida;
 import br.edu.infnet.apppedido.model.domain.Sobremesa;
 
-@Order(3)
+@Order(4)
 @Component
 public class ProdutoTeste implements ApplicationRunner {
 

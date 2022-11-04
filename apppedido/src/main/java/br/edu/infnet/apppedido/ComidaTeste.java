@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.apppedido.controller.ComidaController;
 import br.edu.infnet.apppedido.model.domain.Comida;
 
-@Order(5)
+@Order(6)
 @Component
 public class ComidaTeste implements ApplicationRunner {
 

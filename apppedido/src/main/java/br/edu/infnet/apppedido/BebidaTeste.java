@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.apppedido.model.domain.Bebida;
 import br.edu.infnet.apppedido.model.service.BebidaService;
 
-@Order(4)
+@Order(5)
 @Component
 public class BebidaTeste implements ApplicationRunner {
 	
