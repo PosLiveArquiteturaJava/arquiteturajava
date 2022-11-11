@@ -7,9 +7,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.apppedido.model.domain.Bebida;
+import br.edu.infnet.apppedido.model.domain.Usuario;
 import br.edu.infnet.apppedido.model.service.BebidaService;
 
-@Order(5)
+@Order(4)
 @Component
 public class BebidaTeste implements ApplicationRunner {
 	
@@ -19,6 +20,9 @@ public class BebidaTeste implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("## Cadastramento de Bebidas ##");
+
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
 		
 		Bebida b1 = new Bebida();
 		b1.setCodigo(123);
@@ -27,6 +31,7 @@ public class BebidaTeste implements ApplicationRunner {
 		b1.setGelada(false);
 		b1.setMarca("cooffffe");
 		b1.setTamanho(100);
+		b1.setUsuario(usuario);
 		bebidaService.incluir(b1);
 		
 		Bebida b2 = new Bebida();
@@ -36,6 +41,7 @@ public class BebidaTeste implements ApplicationRunner {
 		b2.setGelada(true);
 		b2.setMarca("choooope");
 		b2.setTamanho(500);
+		b2.setUsuario(usuario);
 		bebidaService.incluir(b2);
 		
 		Bebida b3 = new Bebida();
@@ -45,6 +51,7 @@ public class BebidaTeste implements ApplicationRunner {
 		b3.setGelada(true);
 		b3.setMarca("suuuuco");
 		b3.setTamanho(1000);
+		b3.setUsuario(usuario);
 		bebidaService.incluir(b3);
 	}
 }

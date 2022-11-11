@@ -10,7 +10,7 @@ import br.edu.infnet.apppedido.model.domain.Solicitante;
 import br.edu.infnet.apppedido.model.domain.Usuario;
 import br.edu.infnet.apppedido.model.service.SolicitanteService;
 
-@Order(3)
+@Order(2)
 @Component
 public class SolicitanteTeste implements ApplicationRunner {
 

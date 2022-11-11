@@ -5,35 +5,37 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.apppedido.clients.IEnderecoClient;
+import br.edu.infnet.apppedido.clients.IUsuarioClient;
+import br.edu.infnet.apppedido.model.domain.Endereco;
 import br.edu.infnet.apppedido.model.domain.Usuario;
-import br.edu.infnet.apppedido.model.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private IEnderecoClient enderecoClient;
+	@Autowired
+	private IUsuarioClient usuarioClient;
 
 	public void incluir(Usuario usuario) {
-		usuarioRepository.save(usuario);
+		usuarioClient.incluir(usuario);
 	}
 	
 	public void excluir(Integer id) {
-		usuarioRepository.deleteById(id);
+		usuarioClient.excluir(id);
 	}
 	
 	public Collection<Usuario> obterLista(){
-		return (Collection<Usuario>) usuarioRepository.findAll();
+		return usuarioClient.obterLista();
 	}
 	
 	public Usuario validar(String email, String senha) {
-		
-		Usuario usuario = usuarioRepository.findByEmail(email);
-		
-		if(usuario != null && senha.equals(usuario.getSenha())) {
-			return usuario;
-		}
-		
-		return null;
+
+		return usuarioClient.validar(email, senha);
+	}
+	
+	public Endereco obterCep(String cep) {
+		return enderecoClient.obterCep(cep);
 	}
 }

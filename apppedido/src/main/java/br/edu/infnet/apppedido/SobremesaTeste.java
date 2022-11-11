@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.apppedido.controller.SobremesaController;
 import br.edu.infnet.apppedido.model.domain.Sobremesa;
 
-@Order(7)
+@Order(6)
 @Component
 public class SobremesaTeste implements ApplicationRunner {
 
